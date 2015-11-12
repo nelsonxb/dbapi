@@ -32,6 +32,9 @@ URLs should take the formats:
 - **SQLite**: `sqlite:<path>`
     - e.g. `sqlite:data.db`
     - e.g. `sqlite::memory:`
+- **MySQL/MariaDB**: `mysql://<host>[:port]/<db>` or `mariadb://<host>[:port]/<db>`
+    - e.g. `mysql://localhost:3316/mydb`
+    - e.g. `mariadb://maria/mydb` (assuming `maria` is in your hosts file)
 
 
 ### `DB` Interface ###
@@ -87,3 +90,9 @@ Otherwise, a `TypeError` will be _thrown_ when trying to use
 `db.transaction()`. You must also `npm install sqlite3-transactions`. If the
 `sqlite3` maintainers decide to add transaction functionality directly into the
 `sqlite3` module, this requirement will be lifted.
+
+
+#### MySQL ####
+
+You must pass the database username and password via the options passed to
+`.open()`. You cannot put them in the URL.

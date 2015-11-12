@@ -7,6 +7,7 @@ with the `sql` module.
 Currently, the following databases are supported:
 
 - SQLite (requires `sqlite3`)
+- MySQL/MariaDB (requires `mysql`)
 
 See [`docs/api.md`][api docs] for documentation.
 
