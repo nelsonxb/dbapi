@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/NelsonCrosby/dbapi/issues"
   },
-  "homepage": "https://github.com/NelsonCrosby/dbapi#readme"
+  "homepage": "https://github.com/NelsonCrosby/dbapi#readme",
+  "engines": { "node": ">=4.2" }
 }

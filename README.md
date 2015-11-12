@@ -6,4 +6,4 @@ with the `sql` module.
 
 Currently, the following databases are supported:
 
-- (None yet...)
+- SQLite (requires `sqlite3`)
