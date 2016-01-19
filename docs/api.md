@@ -34,7 +34,7 @@ URLs should take the formats:
     - e.g. `sqlite::memory:`
 - **MySQL/MariaDB**: `mysql://<host>[:port]/<db>` or `mariadb://<host>[:port]/<db>`
     - e.g. `mysql://localhost:3316/mydb`
-    - e.g. `mariadb://maria/mydb` (assuming `maria` is in your hosts file)
+    - e.g. `mariadb://maria/mydb` (assuming `maria` is in your hosts file, e.g. in a docker setup)
 
 
 ### `DB` Interface ###
@@ -116,3 +116,7 @@ Otherwise, a `TypeError` will be _thrown_ when trying to use
 
 You must pass the database username and password via the options passed to
 `.open()`. You cannot put them in the URL.
+
+After some inactivity, the connection may be terminated. To avoid breaking your
+app, you may prefer to use pooled connections (which is probably a good idea
+anyway).
