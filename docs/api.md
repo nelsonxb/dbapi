@@ -77,6 +77,26 @@ successful, resolves to the same object as the `Promise` returned from
 `actions`.
 
 
+### Pooled Connections ###
+
+If a database library supports it, you may use pooled connections. To do this,
+pass `pooling: true` in the `.open()` options.
+
+
+#### `pooledDB.connect(actions: (db: DB): Promise<?>): Promise<?>` ####
+
+Retrieves a database connection from the pool, and performs the `actions`. Use
+the `db` passed to `actions` - this represents the active connection.
+
+`actions` must return a `Promise`. Once this promise is resolved or rejected,
+the connection will be released back to the pool.
+
+The `Promise` returned from `.connect()`, if the `actions` were successful,
+resolves to the same object as the `Promise` returned from `actions`. If the
+promise is rejected, the rejection will be passed on to the promise returned
+from `.connect()`.
+
+
 ### Database Quirks ###
 
 Some databases might act a bit different.
